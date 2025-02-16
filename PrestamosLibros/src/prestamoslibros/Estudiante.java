@@ -37,7 +37,7 @@ public class Estudiante implements Runnable {
 
             boolean prestamoCorrecto = false;
             while (!prestamoCorrecto) { 
-                prestamoCorrecto = GestorPrestamos.solicitarPrestamo(libro1, libro2, this);
+                prestamoCorrecto = GestorPrestamo.solicitarPrestamo(libro1, libro2, this);
                 if (!prestamoCorrecto) {
                     try {
                         Thread.sleep(50); 
@@ -52,7 +52,7 @@ public class Estudiante implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            GestorPrestamos.liberarPrestamo(libro1, libro2, this);
+            GestorPrestamo.liberarPrestamo(libro1, libro2, this);
             librosLeidos++;
 
             try {
